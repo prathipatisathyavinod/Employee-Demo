@@ -1,6 +1,6 @@
 package com.emp.demo.exception;
 
-public class EmployeeNotFoundException extends RuntimeException{
+public class EmployeeNotFoundException extends Exception{
 
 	private static final long serialVersionUID = 1L;
 
@@ -8,3 +8,6 @@ public class EmployeeNotFoundException extends RuntimeException{
 	    super("EmployeeId " + id + " does not exist.");
 	  }
 }
+
+
+

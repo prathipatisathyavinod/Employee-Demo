@@ -34,7 +34,7 @@ public class EmployeeController {
 	
 	
 	@RequestMapping(value="/updateEmp/{empId}", method=RequestMethod.PUT)
-	public ResponseEntity<Object> updateEmployee(@RequestBody Employee employee, @PathVariable("empId") int id){
+	public ResponseEntity<Object> updateEmployee(@RequestBody Employee employee, @PathVariable("empId") int id) throws EmployeeNotFoundException{
 		Employee emp=empRepo.findById(id).orElseThrow(()->new EmployeeNotFoundException(id));
 			emp.setEmpId(employee.getEmpId());
 			emp.setEmpName(employee.getEmpName());
