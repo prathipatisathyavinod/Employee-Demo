@@ -48,8 +48,9 @@ public class EmployeeController {
 	
 	
 	@RequestMapping(value="/removeEmp/{empId}", method=RequestMethod.DELETE)
-	public ResponseEntity<Object> updateEmployee(@PathVariable("empId") int id){
-		empRepo.deleteById(id);
+	public ResponseEntity<Object> updateEmployee(@PathVariable("empId") int id) throws EmployeeNotFoundException{
+		Employee emp=empRepo.findById(id).orElseThrow(()->new EmployeeNotFoundException(id));
+		empRepo.delete(emp);
 		return new ResponseEntity<Object>("Employee deleted successfully",HttpStatus.OK);
 	}
 }
