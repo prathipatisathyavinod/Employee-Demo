@@ -5,14 +5,17 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+
 @Entity
 @Table(name="employees")
 public class Employee {
 	@Id
 	@Column(name="id")
 	private int empId;
+	
 	@Column(name="name")
 	private String empName;
+	
 	private int age;
 	private String address;
 	private double salary;

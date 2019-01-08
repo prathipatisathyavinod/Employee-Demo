@@ -1,0 +1,21 @@
+Queries
+*******
+
+CREATE TABLE employees(  
+   ID INT PRIMARY KEY     NOT NULL,  
+   NAME           TEXT    NOT NULL,  
+   AGE            INT     NOT NULL,  
+   ADDRESS        CHAR(50),  
+   SALARY         REAL  
+); 
+
+
+
+INSERT INTO "employees"(  
+"id", "name", "age", "address", "salary")  
+VALUES (1, 'Ajeet', 25, 'Mau ', 65000.00 ), (2, 'Rakul', 21, 'Shimla', 85000.00),   
+(3, 'Manisha', 24, 'Mumbai', 65000.00), (4, 'Larry', 21, 'Paris', 85000.00); 
+
+
+
+select * from employees;
